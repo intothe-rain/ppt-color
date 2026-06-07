@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPT Color — 색상 팔레트 추천</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>PPT Color</h1>
+        <p>폰트 · 도형 · 배경에 어울리는 색상 조합을 찾아드립니다</p>
+    </header>
+
+    <main>
+        <section class="tag-section">
+            <div class="tag-bar" id="tagBar"></div>
+            <button class="random-btn" id="randomBtn">↻ Random</button>
+        </section>
+
+        <section class="palette-result" id="paletteResult">
+
+            <!-- PPT 슬라이드 미리보기 -->
+            <div class="ppt-preview" id="pptPreview">
+                <div class="ppt-left">
+                    <div class="ppt-shape-circle"></div>
+                    <div class="ppt-shape-rect"></div>
+                    <div class="ppt-shape-dot"></div>
+                </div>
+                <div class="ppt-right">
+                    <div class="ppt-chip">SAMPLE</div>
+                    <h3 class="ppt-title">프레젠테이션 제목</h3>
+                    <div class="ppt-divider"></div>
+                    <p class="ppt-sub">부제목 텍스트가 여기에 들어갑니다</p>
+                    <ul class="ppt-bullets">
+                        <li>핵심 내용 항목 하나</li>
+                        <li>핵심 내용 항목 둘</li>
+                        <li>핵심 내용 항목 셋</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="result-title">
+                팔레트
+                <span class="copy-hint">색상을 클릭하면 HEX 코드가 복사됩니다</span>
+            </h2>
+            <div class="palette-swatches" id="paletteSwatches"></div>
+            <p class="palette-description" id="paletteDescription"></p>
+        </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+
+    <script src="js/colorTheory.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

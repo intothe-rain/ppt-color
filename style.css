@@ -1,0 +1,360 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #F4F6F9;
+    --surface: #FFFFFF;
+    --border: #E2E8F0;
+    --text-primary: #1A202C;
+    --text-secondary: #718096;
+    --accent: #4361EE;
+    --accent-light: #EEF2FF;
+    --radius: 14px;
+    --shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Apple SD Gothic Neo', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 52px 24px 36px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    margin-top: 8px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+main {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tag section */
+.tag-section {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tag-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    flex: 1;
+}
+
+.tag-btn {
+    padding: 8px 18px;
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background: transparent;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+}
+
+.tag-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.tag-btn.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(67, 97, 238, 0.3);
+}
+
+/* Random button */
+.random-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 18px;
+    background: var(--text-primary);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.random-btn:hover {
+    opacity: 0.8;
+    transform: translateY(-1px);
+}
+
+/* PPT 슬라이드 미리보기 */
+.ppt-preview {
+    display: flex;
+    border-radius: 10px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    background: var(--p-bg, #f5f5f5);
+}
+
+.ppt-left {
+    width: 32%;
+    background: var(--p-accent, #4361EE);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.ppt-shape-circle {
+    width: 52%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--p-shape2, rgba(255,255,255,0.3));
+    opacity: 0.85;
+}
+
+.ppt-shape-rect {
+    width: 68%;
+    height: 16%;
+    border-radius: 4px;
+    background: var(--p-shape1, rgba(255,255,255,0.5));
+    opacity: 0.7;
+}
+
+.ppt-shape-dot {
+    width: 22%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--p-bg, #fff);
+    opacity: 0.4;
+    position: absolute;
+    bottom: 12%;
+    right: 12%;
+}
+
+.ppt-right {
+    flex: 1;
+    background: var(--p-bg, #ffffff);
+    padding: 6% 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0;
+}
+
+.ppt-chip {
+    display: inline-block;
+    background: var(--p-accent, #4361EE);
+    color: var(--p-bg, #fff);
+    font-size: 0.55em;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+.ppt-title {
+    font-size: 1.15em;
+    font-weight: 800;
+    color: var(--p-txt, #1a1a1a);
+    line-height: 1.25;
+    margin-bottom: 6px;
+}
+
+.ppt-divider {
+    width: 36px;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--p-shape1, #333);
+    margin-bottom: 8px;
+}
+
+.ppt-sub {
+    font-size: 0.65em;
+    color: var(--p-txt, #333);
+    opacity: 0.65;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.ppt-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ppt-bullets li {
+    font-size: 0.6em;
+    color: var(--p-txt, #333);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.ppt-bullets li::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--p-accent, #4361EE);
+    flex-shrink: 0;
+}
+
+/* Palette result */
+.palette-result {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.result-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.copy-hint {
+    font-size: 0.78rem;
+    font-weight: 400;
+    color: var(--text-secondary);
+}
+
+.palette-swatches {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.swatch {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.swatch:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.13);
+}
+
+.swatch-color {
+    height: 100px;
+}
+
+.swatch-info {
+    padding: 8px 10px;
+    background: var(--surface);
+}
+
+.swatch-role {
+    font-size: 0.68rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 3px;
+}
+
+.swatch-hex {
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.palette-description {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    padding: 12px 16px;
+    background: var(--bg);
+    border-radius: 8px;
+    border-left: 3px solid var(--accent);
+}
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    background: #1A202C;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.25s, transform 0.25s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 560px) {
+    header h1 { font-size: 1.6rem; }
+
+    .tag-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .random-btn { align-self: flex-start; }
+
+    .palette-swatches {
+        grid-template-columns: repeat(5, minmax(56px, 1fr));
+        overflow-x: auto;
+    }
+
+    .swatch-color { height: 72px; }
+}
