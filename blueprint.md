@@ -64,4 +64,7 @@ ppt_color/
 ## 진행 현황
 
 - [x] blueprint 작성
-- [ ] Phase 1 개발 시작
+- [x] Phase 1 개발 완료
+- [x] GitHub 레포 생성 및 push
+- [x] Cloudflare Pages 배포 완료 → https://ppt-color.pages.dev
+- [ ] Phase 2 개발 (이미지 업로드 색상 분석)
